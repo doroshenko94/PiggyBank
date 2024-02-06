@@ -147,30 +147,30 @@
                 context.drawImage(piggyBankImage, 0, 0);
                 
 
-                // Отображение цели (например, 900,000$)
+               // Отображение цели (например, 900,000$)
                 var goalText = 'Target: 70% or $630.000';
                 context.font = '20px Arial';
                 context.fillStyle = '#FF4500';
                 context.textAlign = 'center';
-                context.fillText(goalText, canvas.width / 2, canvas.height / 2 + 40);
+                context.fillText(goalText, canvas.width / 2, canvas.height / 1.8 + 40);
 
                 var goal_70 = 'Total figure: 900,000$';
                 context.font = '20px Arial';
                 context.fillStyle = 'grey';
                 context.textAlign = 'center';
-                context.fillText(goal_70, canvas.width / 2, canvas.height / 2 + 65);
+                context.fillText(goal_70, canvas.width / 2, canvas.height / 1.8 + 65);
 
                 // Отображение процента
                 context.font = '40px Arial';
                 context.fillStyle = '#006400';
                 context.textAlign = 'center';
-                context.fillText(formattedPercentage, canvas.width / 1.7, canvas.height / 2 - 70);
+                context.fillText(formattedPercentage, canvas.width / 1.7, canvas.height / 1.8 - 70);
 
                 // Отображение итоговой суммы
                 context.font = '80px Arial';
                 context.fillStyle = '#006400';
                 context.textAlign = 'center';
-                context.fillText("↑"+formattedResult, canvas.width / 2, canvas.height / 2);
+                context.fillText("↑"+formattedResult, canvas.width / 2, canvas.height / 1.8);
 
                 piggyBankImage.src = canvas.toDataURL();
             }
