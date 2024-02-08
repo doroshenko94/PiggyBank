@@ -137,12 +137,12 @@
             var cryptoResult = cryptoDepositSum - cryptoWithdrawalSum;
 
             // Округление суммы до целого числа и добавление знака доллара
-            var formattedTotalDepositWithdrawalResult = totalDepositWithdrawalResult/900000*100;
+            var formattedTotalDepositWithdrawalResult = Math.round(totalDepositWithdrawalResult).toLocaleString();
             var formattedCryptoResult = '$' + Math.round(cryptoResult).toLocaleString();
 
             // Вычисление процента от целевой суммы для общей суммы
             var totalPercentage = (cryptoResult / totalDepositWithdrawalResult) * 100; // Процент от целевой суммы
-            var formattedTotalPercentage = totalPercentage.toFixed(2) + '%'; // Форматированный процент            
+            var formattedTotalPercentage = totalPercentage.toFixed(1) + '%'; // Форматированный процент            
 
             console.log(typeof cryptoResult + cryptoResult);
             console.log(typeof totalPercentage + totalPercentage);
@@ -159,16 +159,22 @@
             context.drawImage(piggyBankImage, 0, 0);
 
             // Отображение общей суммы и процента на изображении
-            context.font = '80px Arial';
+            context.font = '60px Arial';
             context.fillStyle = '#006400';
             context.textAlign = 'center';
-            context.fillText('$ ' + formattedTotalDepositWithdrawalResult.toFixed(2)+ '%', canvas.width / 1.9, canvas.height / 1.6);
+            context.fillText( '$ ' +formattedTotalDepositWithdrawalResult, canvas.width / 2, canvas.height / 1.8 - 40);
             
 
             context.font = '60px Arial';
-            context.fillStyle = '#fe6952';
+            context.fillStyle = '#FF4500';
             context.textAlign = 'center';
-            context.fillText('₿ ' + formattedTotalPercentage, canvas.width / 1.9, canvas.height / 1.8 - 40);
+            context.fillText('₿ ' + formattedTotalPercentage, canvas.width / 2, canvas.height / 1.8 + 30);
+            
+            // var totalGoalAmount = '$900,000';
+            // context.font = '20px Arial';
+            // context.fillStyle = 'grey';
+            // context.textAlign = 'center';
+            // context.fillText('Target ' + totalGoalAmount, canvas.width / 1.7, canvas.height / 2+60);
 
             // context.font = '80px Arial';
             // context.fillStyle = '#006400';
