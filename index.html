@@ -137,7 +137,7 @@
             var cryptoResult = cryptoDepositSum - cryptoWithdrawalSum;
 
             // Округление суммы до целого числа и добавление знака доллара
-            var formattedTotalDepositWithdrawalResult = '$' + Math.round(totalDepositWithdrawalResult).toLocaleString();
+            var formattedTotalDepositWithdrawalResult = totalDepositWithdrawalResult/900000*100;
             var formattedCryptoResult = '$' + Math.round(cryptoResult).toLocaleString();
 
             // Вычисление процента от целевой суммы для общей суммы
@@ -159,22 +159,16 @@
             context.drawImage(piggyBankImage, 0, 0);
 
             // Отображение общей суммы и процента на изображении
-            context.font = '40px Arial';
+            context.font = '80px Arial';
             context.fillStyle = '#006400';
             context.textAlign = 'center';
-            context.fillText('Net Deposit ' + formattedTotalDepositWithdrawalResult, canvas.width / 2, canvas.height / 1.8);
+            context.fillText('$ ' + formattedTotalDepositWithdrawalResult.toFixed(2)+ '%', canvas.width / 1.9, canvas.height / 1.6);
             
 
-            context.font = '20px Arial';
-            context.fillStyle = '#FF4500';
+            context.font = '60px Arial';
+            context.fillStyle = '#fe6952';
             context.textAlign = 'center';
-            context.fillText('Net Crypto ' + formattedTotalPercentage, canvas.width / 1.7, canvas.height / 1.8 - 40);
-            
-            var totalGoalAmount = '$900,000';
-            context.font = '20px Arial';
-            context.fillStyle = 'grey';
-            context.textAlign = 'center';
-            context.fillText('Target ' + totalGoalAmount, canvas.width / 1.7, canvas.height / 2+60);
+            context.fillText('₿ ' + formattedTotalPercentage, canvas.width / 1.9, canvas.height / 1.8 - 40);
 
             // context.font = '80px Arial';
             // context.fillStyle = '#006400';
